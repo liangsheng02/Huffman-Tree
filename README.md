@@ -21,17 +21,10 @@ The huff-compress.py, conversely, decompressed the text. The readfile() method l
 ## Performance
 The performance is shown below.
 
-#### Compress
-| level |  original file  |   .bin file   |   .pkl file   | build model | encode model | Total |
-| :---: | :-------------: | :-----------: | :-----------: | :---------: | :----------: | ----- |
-| char  | 1,220,150 bytes | 919,856 bytes |  1,833 bytes  |    0.25s    |    1.24s     | 1.50s |
-| word  | 1,220,150 bytes | 459,860 bytes | 832,473 bytes |    0.35s    |    0.70s     | 1.06s |
-
-#### Decompress
-| Level | decompressed file | decode model |
-| :---: | :---------------: | :----------: |
-| char  | 1,220,150 bytes  |    1.21s     |
-| word  | 1,220,150 bytes  |    0.68s     |
+| level | original | .bin file | .pkl file | build model | encode model | Compress | Decompress |
+| :---: | :-------------: | :-----------: | :-----------: | :---------: | :----------: | :-----: | :----------: |
+| char  | 1,220,150 bytes | 919,856 bytes |  1,833 bytes  |    0.25s    |    1.24s     | 1.50s |    1.21s     |
+| word  | 1,220,150 bytes | 459,860 bytes | 832,473 bytes |    0.35s    |    0.70s     | 1.06s |    0.68s     |
 
 ## Improvement
 There are two main directions for improvement, one is to increase the speed of compress/decompress, another is to improve the compression rate.
