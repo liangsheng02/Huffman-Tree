@@ -2,16 +2,19 @@
 A Huffman Tree approach using binary search for text compress/decompress
 
 ## How to Use
-
 To compress: 
-    python huff-compress.py mobydick.txt [-s {char, word}] 
+
+​	python huff-compress.py mobydick.txt [-s {char, word}] 
+
 To decompress:
-    python huff-decompress.py mobydick
+
+​	python huff-decompress.py mobydick
+
 To test: 
-    python test-harness.py mobydick.txt  [-s {char, word}] 
+
+​	python test-harness.py mobydick.txt  [-s {char, word}] 
 
 ## Implementation
-
 Two python files huff-compress.py and huff-decompress.py was created in the implementation, Both of the files can be called by command line, and the evaluation file test-harness.py.
 
 The huff-compress.py is aimed to achieve compression of the input text file by Huffman coding on character level or word level. By defining a HuffmanCompress class, these all could be executed in its initializer. Firstly, the to_dic() method read the input text file into a string and then built a dictionary to store symbol-frequency pairs. A regular expression would be used to split the text into a list of words if chose word level. Secondly, the to_tree() method built a Hu􀁼man tree and returned the root of the tree. Here a binary_search() method was used to help speed up the process, which also led to a lower compression ratio. Finally, the compress() method encoded the text into a binary array of codes, and saved the model and compressed text into new files respectively.
@@ -19,7 +22,6 @@ The huff-compress.py is aimed to achieve compression of the input text file by H
 The huff-compress.py, conversely, decompressed the text. The readfile() method loaded .pkl and .bin files, and returned the symbol-frequency dictionary. Then, by to_tree() method, the same Huffman tree was reconstructed with the dictionary. At last, decompress() method traversed the Huffman tree in a faster non-recursion way, then decoded the text into readable words and stored it into a .txt file.
 
 ## Performance
-
 The performance is shown below.
 
 #### Compress
@@ -35,7 +37,6 @@ The performance is shown below.
 | word  | 1,220,150 bytes  |    0.68s     |
 
 ## Improvement
-
 There are two main directions for improvement, one is to increase the speed of compress/decompress, another is to improve the compression rate.
 
 The method which builds the Huffman tree is the key to improve compression rate. With the same symbol-frequency dictionary, there are different ways to construct a Huffman tree, which will lead to different compression rates, since there are many words/characters have the same frequency. In this implementation, a binary search is used when finding the index that a node should be inserted. This speeded up the tree building significantly , while decreased the compression ratio. Because in this way the lengths of many words/characters code tend to be closed. So, instead of binary search, a simple for loop would be better for compression rate. In addition, according to the performance, the
