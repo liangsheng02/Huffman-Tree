@@ -4,15 +4,14 @@ A Huffman Tree approach using binary search for text compress/decompress
 ## How to Use
 To compress: 
 
-​	python huff-compress.py mobydick.txt [-s {char, word}] 
+```python huff-compress.py mobydick.txt [-s {char, word}]```
 
 To decompress:
 
-​	python huff-decompress.py mobydick
+```python huff-decompress.py mobydick```
 
 To test: 
-
-​	python test-harness.py mobydick.txt  [-s {char, word}] 
+```python test-harness.py mobydick.txt  [-s {char, word}]```
 
 ## Implementation
 Two python files huff-compress.py and huff-decompress.py was created in the implementation, Both of the files can be called by command line, and the evaluation file test-harness.py.
