@@ -3,11 +3,9 @@ A Huffman Tree approach using binary search for text compress/decompress
 
 ## How to Use
 To compress: 
-
 ```python huff-compress.py mobydick.txt [-s {char, word}]```
 
 To decompress:
-
 ```python huff-decompress.py mobydick```
 
 To test: 
